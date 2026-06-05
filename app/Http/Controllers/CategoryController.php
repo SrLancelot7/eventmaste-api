@@ -14,14 +14,14 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name'        => 'required|string|max:255',
-            'description' => 'nullable|string',
+            'nombre'        => 'required|string|max:255',
+            'descripcion' => 'nullable|string',
             'icono_id'    => 'nullable|integer',
         ]);
 
         $category = Category::create([
-            'name'        => $request->name,
-            'description' => $request->description,
+            'nombre'        => $request->nombre,
+            'descripcion' => $request->descripcion,
             'icono_id'    => $request->icono_id ?? 0,
         ]);
 
